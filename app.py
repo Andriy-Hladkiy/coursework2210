@@ -22,14 +22,14 @@ from sqlalchemy.sql import func
 app = Flask(__name__)
 app.secret_key = 'key'
 
-ENV = 'dev'
+ENV = 'prod'
 if ENV == 'dev':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1@localhost/test2'
 else:
     app.debug = False
     app.config[
-        'SQLALCHEMY_DATABASE_URI'] = 'postgres://ppynfkesvzviil:26bb0df0d4056fcb91e6f9b91cc2df9728e2a6c11e80997e4b55dd238005cf19@ec2-3-220-86-239.compute-1.amazonaws.com:5432/d95rk7g2mn4fsg'
+        'SQLALCHEMY_DATABASE_URI'] = 'postgres://fhehffwmvlzkku:e4e9539062e2cd4765550e4ad36e835e630b2d4b442504998f870733d03df2a0@ec2-79-125-2-142.eu-west-1.compute.amazonaws.com:5432/d1jhdnlc95ioeq'
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1@localhost/test'
 
