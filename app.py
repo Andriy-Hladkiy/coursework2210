@@ -93,12 +93,12 @@ class userHasLesson(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('Users.user_id'), primary_key=True)
     lesson_id = db.Column(db.Integer, db.ForeignKey('Lesson.lesson_id'), primary_key=True)
 
-db.session.query(ormUsers).delete()
-db.session.query(ormLesson).delete()
-db.session.query(ormFloor).delete()
-db.session.query(ormBuilding).delete()
-db.session.commit()
-db.session.query(userHasLesson).delete()
+# db.session.query(ormUsers).delete()
+# db.session.query(ormLesson).delete()
+# db.session.query(ormFloor).delete()
+# db.session.query(ormBuilding).delete()
+# db.session.commit()
+# db.session.query(userHasLesson).delete()
 
 db.create_all()
 
@@ -127,7 +127,7 @@ db.create_all()
 # db.session.add_all([Building1,Building2,Building3])
 # db.session.add_all([Lesson1,Lesson2,Lesson3])
 # db.session.add_all([Floor1,Floor2,Floor3])
-db.session.commit()
+# db.session.commit()
 
 
 # main page
