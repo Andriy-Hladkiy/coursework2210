@@ -1,0 +1,89 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+    <!--https://www.codeply.com/go/nhbdi2FkJm-->
+
+
+    <div class="col-md-6 mx-auto">
+
+        <!-- form card login -->
+        <div class="card rounded-0">
+
+            <div class="card-header">
+                <h3 class="mb-0">{{ form_name }}</h3>
+            </div>
+            <div class="card-body">
+
+                <form class="form" action="/new_floor" method=post>
+                    {{ form.hidden_tag() }}
+
+
+                    <div class="form-group">
+                        {{ form.floors_number.label }}
+                        {{ form.floors_number(class_="form-control") }}
+
+                        {% if form.floors_number.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for message in form.floors_number.errors %}
+                                    <div>{{ message }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+
+                    <div class="form-group">
+                        {{ form.build_number.label }}
+                        {{ form.build_number(class_="form-control") }}
+
+                        {% if form.build_number.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for message in form.build_number.errors %}
+                                    <div>{{ message }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.floor_type.label }}
+                        {{ form.floor_type(class_="form-control") }}
+
+                        {% if form.floor_type.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for message in form.floor_type.errors %}
+                                    <div>{{ message }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.floor_status.label }}
+                        {{ form.floor_status(class_="form-control") }}
+
+                        {% if form.floor_status.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for message in form.floor_status.errors %}
+                                    <div>{{ message }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+
+                    {{ form.submit(class_="btn btn-success") }}
+                </form>
+            </div>
+            <!--/card-block-->
+        </div>
+        <!-- /form card login -->
+
+    </div>
+
+
+
+
+
+{% endblock %}

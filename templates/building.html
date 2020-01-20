@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+
+ <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">build number</th>
+                <th scope="col">build adress</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for user in building %}
+        <tr>
+            <td> {{user.build_number }} </td>
+            <td> {{user.build_address}} </td>
+                         <td>
+                    <a href="/edit_building/{{user.build_number}}"  button type="button" class="btn btn-warning" name="btn_edit_holiday" data-build_number="{{user.build_number}}">Edit</a>
+                    <a href="/delete_building/{{user.build_number}}" button type="button" class="btn btn-danger" name="btn_delete_holiday" data-build_number="{{user.build_number}}">Delete</a>
+                </td>
+
+        </tr>
+        {% endfor %}
+                    <tr>
+                <td> <a href="/new_building" button type="button" class="btn btn-success" name="btn_new_holiday">New Building</a> </td>
+            </tr>
+
+        </tbody>
+    </table>
+ </div>
+
+
+{% endblock %}

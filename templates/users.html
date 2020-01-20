@@ -1,0 +1,48 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+
+ <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">user id</th>
+                <th scope="col">user name</th>
+                <th scope="col">user surname</th>
+                <th scope="col">user email</th>
+                <th scope="col">user groupe</th>
+                <th scope="col">user faculty</th>
+                <th scope="col">user course</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+        {% for user in users %}
+        <tr>
+            <td> {{user.user_id }} </td>
+            <td> {{user.user_name}} </td>
+            <td> {{user.user_surname}} </td>
+            <td> {{user.user_email}} </td>
+            <td> {{user.user_groupe}} </td>
+            <td> {{user.user_faculty}} </td>
+            <td> {{user.user_course}} </td>
+                                 <td>
+                    <a href="/edit_user/{{user.user_id }} " button type="button" class="btn btn-warning" name="btn_edit_user"
+                       data-user_id="{{user.user_id}}">Edit</a>
+                    <a href="/delete_user/{{user.user_id }} " button type="button" class="btn btn-danger" name="btn_delete_user"
+                       data-user_id="{{user.user_id}}">Delete</a>
+                </td>
+        </tr>
+        {% endfor %}
+            <tr>
+                <td> <a href="/new_user" button type="button" class="btn btn-success" name="btn_new_user">New User</a> </td>
+            </tr>
+
+        </tbody>
+    </table>
+ </div>
+
+
+{% endblock %}

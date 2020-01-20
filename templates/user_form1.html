@@ -1,0 +1,131 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+    <!--https://www.codeply.com/go/nhbdi2FkJm-->
+
+
+    <div class="col-md-6 mx-auto">
+
+        <!-- form card login -->
+        <div class="card rounded-0">
+
+            <div class="card-header">
+                <h3 class="mb-0">{{ form_name }}</h3>
+            </div>
+            <div class="card-body">
+
+                <form class="form" method=post>
+                    {{ form.hidden_tag() }}
+
+                    <div class="form-group">
+                        {{ form.user_id.label }}
+                        {{ form.user_id(class_="form-control") }}
+
+                        {% if form.user_id.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for message in form.user_id.errors %}
+                                    <div>{{ message }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+
+                    <div class="form-group">
+                        {{ form.user_name.label }}
+                        {{ form.user_name(class_="form-control") }}
+
+                        {% if form.user_name.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for message in form.user_name.errors %}
+                                    <div>{{ message }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.user_surname.label }}
+                        {{ form.user_surname(class_="form-control") }}
+
+                        {% if form.user_surname.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for message in form.user_surname.errors %}
+                                    <div>{{ message }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.user_email.label }}
+                        {{ form.user_email(class_="form-control") }}
+
+                        {% if form.user_email.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for message in form.user_email.errors %}
+                                    <div>{{ message }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.user_groupe.label }}
+                        {{ form.user_groupe(class_="form-control") }}
+
+
+                        {% if form.user_groupe.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for message in form.user_groupe.errors %}
+                                    <div>{{ message }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.user_faculty.label }}
+                        {{ form.user_faculty(class_="form-control") }}
+
+
+                        {% if form.user_faculty.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for message in form.age.errors %}
+                                    <div>{{ message }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.user_course.label }}
+                        {{ form.user_course(class_="form-control") }}
+
+
+                        {% if form.user_course.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for message in form.user_course.errors %}
+                                    <div>{{ message }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+
+                    {{ form.submit(class_="btn btn-success") }}
+                </form>
+            </div>
+            <!--/card-block-->
+        </div>
+        <!-- /form card login -->
+
+    </div>
+
+    </div>
+
+
+
+
+{% endblock %}

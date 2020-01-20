@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+
+ <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">lesson_id</th>
+                <th scope="col">build_number</th>
+                <th scope="col">lesson_name</th>
+                <th scope="col">lesson_number</th>
+                <th scope="col">teacher</th>
+                <th scope="col">floors_number</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+        {% for user in lesson %}
+        <tr>
+            <td> {{user.lesson_id }} </td>
+            <td> {{user.build_number}} </td>
+            <td> {{user.lesson_name}} </td>
+            <td> {{user.lesson_number }} </td>
+            <td> {{user.teacher}} </td>
+            <td> {{user.floors_number}} </td>
+                                 <td>
+                    <a href="/edit_lesson/{{user.lesson_id }}" button type="button" class="btn btn-warning" name="btn_edit_lesson" >Edit</a>
+                    <a href="/delete_lesson/{{user.lesson_id }}" type="button" class="btn btn-danger" name="btn_delete_lesson" >Delete</a>
+                </td>
+        </tr>
+        {% endfor %}
+            <tr>
+                <td> <a href="/new_lesson" type="button" class="btn btn-success" name="btn_new_skill">New Lesson</a> </td>
+            </tr>
+        
+        </tbody>
+    </table>
+ </div>
+
+
+{% endblock %}
